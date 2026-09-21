@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#173d32">
+    <meta name="description" content="Comparateur éditorial de maisons à Antony, 92160, sous 750 000 €.">
+    <title>Antony / maisons — comparaison 92160</title>
+    <link rel="stylesheet" href="./assets/styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#results">Aller directement aux résultats</a>
+
+    <header class="site-header">
+      <div class="masthead">
+        <a class="brand" href="./" aria-label="Antony maisons, accueil">
+          <span class="brand-mark" aria-hidden="true">AM</span>
+          <span>Antony <span class="brand-divider">/</span> maisons</span>
+        </a>
+        <p class="masthead-note">Sélection comparée <span aria-hidden="true">·</span> 92160</p>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="criteria-header" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">RECHERCHE SOUS CONTRAINTES</p>
+          <h1 id="page-title">Comparer des maisons à Antony.</h1>
+          <p class="intro">Une sélection manuelle pour décider plus vite : chaque annonce est lue, sourcée et vérifiée selon les mêmes critères.</p>
+        </div>
+        <aside class="snapshot-note" aria-label="Nature de la sélection">
+          <span class="note-label">Instantané éditorial</span>
+          <p>Pas un portail exhaustif. Les prix et la disponibilité sont à confirmer auprès de l’agence.</p>
+        </aside>
+      </section>
+
+      <ul class="criteria-chips" aria-label="Critères immuables de la sélection">
+        <li>Antony · 92160</li>
+        <li>Maison à vendre</li>
+        <li>3 chambres minimum</li>
+        <li>100 m² habitables minimum</li>
+        <li>Sous-sol privé requis</li>
+        <li class="chip-accent">Moins de 750&nbsp;000&nbsp;€</li>
+      </ul>
+
+      <div class="workspace">
+        <aside class="filter-panel" aria-labelledby="filters-title">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">AFFINER</p>
+              <h2 id="filters-title">Vos critères</h2>
+            </div>
+            <button class="text-button" id="reset-filters" type="button">Réinitialiser</button>
+          </div>
+
+          <form id="filters-form">
+            <div class="field-group">
+              <label for="keyword">Mot-clé</label>
+              <input id="keyword" name="keyword" type="search" placeholder="Quartier, titre, description" autocomplete="off">
+              <p class="field-hint">Recherche insensible aux accents.</p>
+            </div>
+
+            <div class="field-group">
+              <label for="max-price">Budget maximum</label>
+              <div class="input-with-unit">
+                <input id="max-price" name="maxPrice" type="number" inputmode="decimal" min="0.01" max="749999.99" step="0.01" value="749999.99">
+                <span aria-hidden="true">€</span>
+              </div>
+              <p class="field-hint">Plafond inclus, limité à 749&nbsp;999,99&nbsp;€.</p>
+            </div>
+
+            <div class="field-group">
+              <label for="min-bedrooms">Chambres minimum</label>
+              <select id="min-bedrooms" name="minBedrooms">
+                <option value="3" selected>3 chambres</option>
+                <option value="4">4 chambres</option>
+                <option value="5">5 chambres</option>
+                <option value="6">6 chambres</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="min-area">Surface habitable minimum</label>
+              <select id="min-area" name="minArea">
+                <option value="100" selected>100 m²</option>
+                <option value="120">120 m²</option>
+                <option value="150">150 m²</option>
+                <option value="180">180 m²</option>
+              </select>
+            </div>
+
+            <label class="check-row" for="favorites-only">
+              <input id="favorites-only" name="favoritesOnly" type="checkbox">
+              <span>Afficher mes favoris uniquement</span>
+            </label>
+
+            <button class="button button-primary apply-button" type="submit">Appliquer les filtres</button>
+          </form>
+
+          <div class="filter-rule" role="note">
+            <strong>Les contraintes de base restent actives.</strong>
+            <p>Un filtre de surface ou de chambres peut resserrer la sélection, jamais l’élargir.</p>
+          </div>
+
+          <p class="privacy-note">Vos favoris restent dans ce navigateur. Sans compte ni traceur ajouté. Hébergement GitHub Pages.</p>
+        </aside>
+
+        <section class="results-panel" id="results" aria-labelledby="results-title">
+          <div class="results-toolbar">
+            <div>
+              <p class="eyebrow">LA LISTE</p>
+              <h2 id="results-title">Maisons retenues</h2>
+              <p id="result-count" class="result-count" aria-live="polite" tabindex="-1">Chargement des annonces…</p>
+            </div>
+            <div class="sort-control">
+              <label for="sort-by">Trier par</label>
+              <select id="sort-by" name="sortBy">
+                <option value="price-asc" selected>Prix croissant</option>
+                <option value="price-desc">Prix décroissant</option>
+                <option value="area-desc">Surface décroissante</option>
+                <option value="price-m2">Prix au m²</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="loading-state" class="state-panel" role="status">
+            <p class="state-kicker">UN INSTANT</p>
+            <h3>Lecture de la sélection…</h3>
+            <p>Les annonces et leurs preuves de sous-sol arrivent.</p>
+          </div>
+
+          <div id="error-state" class="state-panel state-error" role="alert" hidden>
+            <p class="state-kicker">SOURCE INDISPONIBLE</p>
+            <h3>La sélection ne peut pas être chargée.</h3>
+            <p id="error-message">Le fichier de données est momentanément inaccessible.</p>
+            <button class="button button-secondary" id="retry-load" type="button">Réessayer</button>
+          </div>
+
+          <div id="empty-state" class="state-panel" hidden>
+            <p class="state-kicker">RIEN À AFFICHER</p>
+            <h3 id="empty-title">Aucune maison ne correspond.</h3>
+            <p id="empty-message">Essayez de retirer un filtre optionnel ou réinitialisez la recherche.</p>
+            <button class="button button-secondary" id="empty-reset" type="button">Réinitialiser les filtres</button>
+          </div>
+
+          <ol id="listings-list" class="listing-list" aria-live="polite"></ol>
+
+          <p id="dataset-meta" class="dataset-meta" hidden></p>
+        </section>
+      </div>
+    </main>
+
+    <aside id="comparison-tray" class="comparison-tray" aria-labelledby="comparison-title" hidden>
+      <div class="tray-copy">
+        <p class="eyebrow eyebrow-light">COMPARER</p>
+        <h2 id="comparison-title">Votre tableau de comparaison</h2>
+        <p id="comparison-summary">Aucune maison sélectionnée · jusqu’à 3 maisons</p>
+      </div>
+      <ul id="comparison-selections" class="comparison-selections" aria-label="Maisons sélectionnées pour comparaison"></ul>
+      <div class="tray-actions">
+        <button id="clear-comparison" class="button button-on-dark" type="button">Vider</button>
+        <button id="open-comparison" class="button button-light" type="button" disabled>Comparer <span aria-hidden="true">→</span></button>
+      </div>
+    </aside>
+
+    <dialog id="comparison-dialog" aria-labelledby="dialog-title">
+      <div class="dialog-shell">
+        <div class="dialog-header">
+          <div>
+            <p class="eyebrow">LECTURE CÔTE À CÔTE</p>
+            <h2 id="dialog-title">Comparer les maisons</h2>
+          </div>
+          <form method="dialog">
+            <button class="close-button" aria-label="Fermer la comparaison" type="submit">Fermer <span aria-hidden="true">×</span></button>
+          </form>
+        </div>
+        <p id="dialog-intro" class="dialog-intro">Les valeurs sont issues des annonces sélectionnées.</p>
+        <div class="comparison-table-wrap">
+          <table class="comparison-table">
+            <caption class="visually-hidden">Tableau comparatif des maisons sélectionnées</caption>
+            <thead id="comparison-table-head"></thead>
+            <tbody id="comparison-table-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </dialog>
+
+    <div id="live-region" class="visually-hidden" role="status" aria-live="polite"></div>
+    <footer class="site-footer">
+      <p>
+        <a href="https://github.com/oscar-support/antony-maisons">Code source</a>
+        <span aria-hidden="true"> · </span>
+        <a href="https://github.com/oscar-support/antony-maisons/blob/main/docs/methodologie.md">Méthodologie</a>
+        <span aria-hidden="true"> · </span>
+        <a href="https://github.com/oscar-support/antony-maisons/blob/main/docs/sources.md">Sources</a>
+      </p>
+    </footer>
+    <script type="module" src="./assets/app.js"></script>
+  </body>
+</html>
